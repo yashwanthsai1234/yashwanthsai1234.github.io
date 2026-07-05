@@ -561,18 +561,20 @@ a {
       display: flex;
       justify-content: center;
       align-items: center;
-      // The monitor's screen sits in the upper ~13%-64% of services2.png (the
-      // silver base fills the bottom). Centering the text over the full
-      // viewport dropped it too low, so long paragraphs leaked onto the base.
-      // Lift the text block up onto the screen center (~37% of the viewport).
+      // The monitor's screen occupies ~20%-80% of services2.png horizontally
+      // and the upper ~13%-64% vertically (silver base fills the bottom).
+      // Centering the text over the full viewport put it too low AND too far
+      // right, so it leaked onto the base and past the screen's right edge.
+      // Lift it onto the screen center (~37% of viewport height) and shift it
+      // left so its right edge stays inside the screen (~80% of viewport width).
       .content_wrapper {
-        transform: translateY(-14vh);
+        transform: translate(-10vw, -14vh);
       }
       .content {
         opacity: 0;
         .heading {
           margin: 6px 0;
-          font-size: 3.2rem;
+          font-size: 3rem;
           text-transform: uppercase;
           font-weight: 300;
           letter-spacing: 5px;

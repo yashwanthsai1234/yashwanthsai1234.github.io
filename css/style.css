@@ -623,7 +623,7 @@ a {
 
 #skills .dNd .right .content .heading {
   margin: 6px 0;
-  font-size: 3.2rem;
+  font-size: 3rem;
   text-transform: uppercase;
   font-weight: 300;
   letter-spacing: 5px;
@@ -637,13 +637,15 @@ a {
   font-size: 1.8rem;
 }
 
-/* The monitor's screen sits in the upper ~13%-64% of services2.png (the
-   silver base fills the bottom). Centering the text over the full viewport
-   dropped it too low, so long paragraphs leaked onto the base. Lift the text
-   block up to sit on the screen center (~37% of the viewport) instead. */
+/* The monitor's screen occupies ~20%-80% of services2.png horizontally and
+   the upper ~13%-64% vertically (the silver base fills the bottom). Centering
+   the text over the full viewport put it too low AND too far right, so it
+   leaked onto the base and past the screen's right edge. Shift the block up
+   onto the screen center (~37% of the viewport height) and left so its right
+   edge stays inside the screen's right border (~80% of the viewport width). */
 #skills .dNd .right .content_wrapper {
-  -webkit-transform: translateY(-14vh);
-          transform: translateY(-14vh);
+  -webkit-transform: translate(-10vw, -14vh);
+          transform: translate(-10vw, -14vh);
 }
 
 #skills .media {
