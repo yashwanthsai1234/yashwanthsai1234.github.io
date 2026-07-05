@@ -561,20 +561,27 @@ a {
       display: flex;
       justify-content: center;
       align-items: center;
+      // The monitor's screen sits in the upper ~13%-64% of services2.png (the
+      // silver base fills the bottom). Centering the text over the full
+      // viewport dropped it too low, so long paragraphs leaked onto the base.
+      // Lift the text block up onto the screen center (~37% of the viewport).
+      .content_wrapper {
+        transform: translateY(-14vh);
+      }
       .content {
         opacity: 0;
         .heading {
-          margin: 10px 0;
-          font-size: 4rem;
+          margin: 6px 0;
+          font-size: 3.2rem;
           text-transform: uppercase;
           font-weight: 300;
           letter-spacing: 5px;
           color: #28282b;
         }
         .para {
-          width: 30%;
+          width: 24ch;
           letter-spacing: 3px;
-          line-height: 25px;
+          line-height: 23px;
           font-size: 1.8rem;
         }
       }
