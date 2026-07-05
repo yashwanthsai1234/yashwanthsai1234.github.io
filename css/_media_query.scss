@@ -65,6 +65,11 @@
 
     .dNd {
       background-size: contain;
+      // The upward shift is tuned for the cover-cropped desktop geometry;
+      // the contained layout below 1200px positions the monitor differently.
+      .right .content_wrapper {
+        transform: none;
+      }
       .left {
         svg {
           margin-top: 20rem;

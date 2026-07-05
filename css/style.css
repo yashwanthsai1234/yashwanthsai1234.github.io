@@ -622,8 +622,8 @@ a {
 }
 
 #skills .dNd .right .content .heading {
-  margin: 10px 0;
-  font-size: 4rem;
+  margin: 6px 0;
+  font-size: 3.2rem;
   text-transform: uppercase;
   font-weight: 300;
   letter-spacing: 5px;
@@ -631,10 +631,19 @@ a {
 }
 
 #skills .dNd .right .content .para {
-  width: 30%;
+  width: 24ch;
   letter-spacing: 3px;
-  line-height: 25px;
+  line-height: 23px;
   font-size: 1.8rem;
+}
+
+/* The monitor's screen sits in the upper ~13%-64% of services2.png (the
+   silver base fills the bottom). Centering the text over the full viewport
+   dropped it too low, so long paragraphs leaked onto the base. Lift the text
+   block up to sit on the screen center (~37% of the viewport) instead. */
+#skills .dNd .right .content_wrapper {
+  -webkit-transform: translateY(-14vh);
+          transform: translateY(-14vh);
 }
 
 #skills .media {
@@ -994,6 +1003,10 @@ a {
   }
   #skills .dNd {
     background-size: contain;
+  }
+  #skills .dNd .right .content_wrapper {
+    -webkit-transform: none;
+            transform: none;
   }
   #skills .dNd .left svg {
     margin-top: 20rem;
